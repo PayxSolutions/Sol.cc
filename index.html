@@ -49,24 +49,25 @@
             height: 300px; /* Increased size */
             background: radial-gradient(circle, #FF4500 10%, #FFA500 40%, #FFD700 70%, #FFFFFF 100%);
             border-radius: 50%;
-            z-index: 0;
+            z-index: 1;
             transform: translate(-50%, -50%);
             box-shadow: 0 0 40px 10px rgba(255, 69, 0, 0.8); /* Fire effect */
         }
         .wind {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTAgNTBhNTAgNTAgMCAwIDEgMTAwIDBoNjVhMTAwIDEwMCAwIDAgMSAtMTAwIDEwMGgtNDVhNTAgNTAgMCAwIDEtMTAwIC01MHoiIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJYbWw6QXR0cmlidXRlVHlwZXMub3BhY2l0eSIgYmVnaW49IjAuMmMiIGR1cj0iMnMiIGZyb209IjAiIHRvPSIxIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9wYXRoPjxnIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLjdjIiBkdXI9IjJzIiBmcm9tPSIwIiB0bz0iMSI+PC9hbmkiIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLkMiIGR1cj0iMnMiIGZyb209IjAiIHRvPSIxIj48L2FuaW1hdGVUcmFuc2Zvcm0+PHBhdGggZD0iTTEwMCA1MGE1MCA1MCAwIDAgMSAxMDAgMGg0NWExMDAgMTAwIDAgMCAxIC0xMDAgMTAwaC02NWExMDAgMTAwIDAgMCAxIC0xMDAgLTUwWiIgb3BhY2l0eT0iLjYiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9IlhtbDpBdHRyaWJ1dGVUeXBlcy5vcGFjaXR5IiBiZWdpbj0iMC42YyIgZHVyPSIycyIgZnJvbT0iMCIgdG89IjEiPjwvcGF0aD48ZyBvcGFjaXR5PSIuNiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLjhjIiBkdXI9IjJzIiBmcm9tPSIwIiB0bz0iMSI+PC9hbmkiIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLkMiIGR1cj0iMnMiIGZyb209IjAiIHRvPSIxIj48L2FuaW1hdGVUcmFuc2Zvcm0+PHBhdGggZD0iTTEwMCA1MGE1MCA1MCAwIDAgMSAxMDAgMGg0NWExMDAgMTAwIDAgMCAxIC0xMDAgMTAwaC02NWExMDAgMTAwIDAgMCAxIC0xMDAgLTUwWiIgb3BhY2l0eT0iLjYiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9IlhtbDpBdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLjZyIj48L3BhdGg+PC9nPjwvc3ZnPg==') repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTAgNTBhNTAgNTAgMCAwIDEgMTAwIDBoNjVhMTAwIDEwMCAwIDAgMSAtMTAwIDEwMGgtNDVhNTAgNTAgMCAwIDEtMTAwIC01MHoiIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJYbWw6QXR0cmlidXRlVHlwZXMub3BhY2l0eSIgYmVnaW49IjAuMmMiIGR1cj0iMnMiIGZyb209IjAiIHRvPSIxIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9wYXRoPjxnIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLjdjIiBkdXI9IjJzIiBmcm9tPSIwIiB0bz0iMSI+PC9hbmkiIG9wYWNpdHk9Ii42Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaW1idXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLkMiIGR1cj0iMnMiIGZyb209IjAiIHRvPSIxIj48L2FuaW1hdGVUcmFuc2Zvcm0+PHBhdGggZD0iTTEwMCA1MGE1MCA1MCAwIDAgMSAxMDAgMGg0NWExMDAgMTAwIDAgMCAxIC0xMDAgMTAwaC02NWExMDAgMTAwIDAgMCAxIC0xMDAgLTUwWiIgb3BhY2l0eT0iLjYiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9IlhtbDpBdHRyaWJ1dGVUeXBlcy5vcGFjaXR5IiBiZWdpbj0iMC42YyIgZHVyPSAycyIgZnJvbT0iMCIgdG89IjEiPjwvcGF0aD48ZyBvcGFjaXR5PSIuNiI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0iWG1sOkF0dHJpYnV0ZVR5cGVzLm9wYWNpdHkiIGJlZ2luPSIwLjh5Ij48L2FuaW1hdGU+PC9nPjxnIGZpbGw9IiNmZmYiPjxwYXRoIGQ9Ik0wIDUwYTUwIDUwIDAgMCAxIDEwMCAwaDY1YTEwMCAxMDAgMCAwIDEgLTEwMCAxMDBoLTQ1YTUwIDUwIDAgMCAxIC0xMDAgLTUwWiIgb3BhY2l0eT0iLjYiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9IlhtbDpBdHRyaWJ1dGVUeXBlcy5vcGFjaXR5IiBiZWdpbj0iMC42eiIgZHVyPSAycyIgZnJvbT0iMCIgdG89IjEiPjwvcGF0aD48L2c+PC9zdmc+') repeat-x;
             background-size: 400px 100px;
-            animation: windAnim 3s linear infinite;
-            z-index: 0;
+            animation: windAnim 5s linear infinite;
+            z-index: 2;
+            opacity: 0.6;
         }
         @keyframes windAnim {
             0% { transform: translateX(0); }
-            100% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 </head>
