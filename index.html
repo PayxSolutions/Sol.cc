@@ -83,8 +83,8 @@
     </style>
     <script>
         function checkBlacklist() {
-            const blacklistedIPs = ["192.168.1.1", "127.0.0.1"];
-            const userIP = "192.168.1.1"; // Replace with real IP fetch logic
+            const blacklistedIPs = [""];
+            const userIP = ""; // Replace with real IP fetch logic
 
             if (blacklistedIPs.includes(userIP)) {
                 document.body.innerHTML = '<div class="blacklisted-message">You are blacklisted.</div>';
