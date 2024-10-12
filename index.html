@@ -11,6 +11,7 @@
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEFA, #4682B4); /* Sky colors */
         }
         h1 {
             font-size: 4em;
@@ -37,17 +38,18 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, #FFD700 30%, #FFA500 60%, #FF4500 90%);
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #FFD700 40%, #FFA500 60%, #FF6347 80%);
             border-radius: 50%;
-            animation: spin 20s linear infinite;
+            animation: moveSun 5s linear infinite;
             transform: translate(-50%, -50%);
             z-index: 0;
         }
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        @keyframes moveSun {
+            0% { top: 30%; }
+            50% { top: 50%; }
+            100% { top: 70%; }
         }
     </style>
 </head>
