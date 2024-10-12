@@ -11,7 +11,14 @@
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #87CEFA, #4682B4); /* Sky colors */
+            background: linear-gradient(to bottom, #FFB6C1, #8A2BE2, #00BFFF); /* Pink, Purple, Blue */
+            background-size: 400% 400%;
+            animation: moveSky 15s ease infinite;
+        }
+        @keyframes moveSky {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         h1 {
             font-size: 4em;
@@ -40,16 +47,11 @@
             left: 50%;
             width: 150px;
             height: 150px;
-            background: radial-gradient(circle, #FFD700 40%, #FFA500 60%, #FF6347 80%);
+            background: radial-gradient(circle, #FF4500 10%, #FFA500 40%, #FFD700 70%, #FFFFFF 100%);
             border-radius: 50%;
-            animation: moveSun 5s linear infinite;
-            transform: translate(-50%, -50%);
             z-index: 0;
-        }
-        @keyframes moveSun {
-            0% { top: 30%; }
-            50% { top: 50%; }
-            100% { top: 70%; }
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 30px 10px rgba(255, 69, 0, 0.8); /* Fire effect */
         }
     </style>
 </head>
